@@ -4,36 +4,28 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema(
 	{
-		username      : {
+		username : {
 			type     : String,
 			required : true
 		},
-		email         : {
+		email    : {
 			type     : String,
 			required : true,
 			unique   : true,
 			index    : true
 		},
-		password      : {
+		password : {
 			type     : String,
 			required : true
 		},
-		isAdmin       : {
+		isAdmin  : {
 			type    : Boolean,
 			default : false
 		},
-		cart          : {
-			type    : Object,
-			default : {
-				total : 0,
-				count : 0
-			}
-		},
-		notifications : {
+		cart     : {
 			type    : Array,
 			default : []
-		},
-		orders        : [ { type: Schema.Types.ObjectId, ref: 'Order' } ]
+		}
 	},
 	{ minimize: false }
 );
