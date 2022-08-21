@@ -1,0 +1,90 @@
+.navbar {
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary-color);
+    padding: 1.5rem 1rem;
+    z-index: 50;
+}
+
+.navbar__logo h2 {
+    color: var(--white-color);
+}
+
+.navbar__links {
+    list-style: none;
+
+    li{
+        padding-left: 1.5rem;
+
+        a{
+            text-decoration: none;
+            color: var(--white-color);
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+
+            span{
+                display: flex;
+                align-items: center;
+                margin-left: 8px;
+            }
+        }
+
+        :hover {
+            background: var(--secondary-color);
+        }
+    }
+
+    .cart__link, .home__link, .login__link {
+        background: #333;
+        padding: .5rem;
+        border-radius: 6px;
+    }
+
+    .cartlogo__badge {
+        width: 23px;
+        height: 23px;
+        background: var(--white-color) !important;
+        border-radius: 50%;
+        color: var(--black-color);
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+
+    }
+}
+
+.hamburger__menu {
+    width: 30px;
+    height: 30px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburger__menu > div {
+    width: 100%;
+    height: 3px;
+    background: var(--white-color);
+}
+
+.hamburger__menu:hover > div {
+    background: var(--secondary-color);
+}
+
+@media (max-width: 900px) {
+    .navbar__links{
+        display:none;
+    }
+    
+    .hamburger__menu {
+        display: flex;
+    }
+}
+
+@media (max-width: 500px) {
+    .navbar__logo h2{
+        font-size: 1rem;
+    }
+}

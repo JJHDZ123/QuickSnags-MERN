@@ -64,7 +64,7 @@ export const logout = (req, res, next) => {
 	});
 };
 
-export const isLoggedIn = () => {
+export const isLoggedIn = (req, res) => {
 	const token = req.session.isAuth;
 
 	switch (token) {
