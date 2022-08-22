@@ -7,7 +7,7 @@ import checkAuth from '../utils/checkAuth.js';
 const router = express.Router();
 
 router.use('/auth', authRoutes);
-router.use('/products', checkAuth, productsRoutes);
+router.use('/products', productsRoutes);
 router.use('/users', checkAuth, userRoutes);
 
 export default router;
