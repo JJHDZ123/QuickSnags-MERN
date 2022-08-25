@@ -4,6 +4,12 @@
     background-color: var(--primary-color);
     padding: 1.5rem 1rem;
     z-index: 50;
+    background: rgb(232,67,147);
+    background: linear-gradient(
+    58deg,
+    rgba(232,67,147,1) 10%, 
+    rgba(123,44,191,1) 100%
+    );
 }
 
 .navbar__logo h2 {
@@ -31,7 +37,12 @@
         }
 
         :hover {
-            background: var(--secondary-color);
+        background: rgb(232,67,147);
+        background: linear-gradient(
+            58deg,
+        rgba(232,67,147,1) 10%, 
+        rgba(123,44,191,1) 100%
+        );
         }
     }
 
@@ -70,7 +81,7 @@
 }
 
 .hamburger__menu:hover > div {
-    background: var(--secondary-color);
+    background: var(--primary-color);
 }
 
 @media (max-width: 900px) {

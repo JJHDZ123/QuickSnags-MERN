@@ -9,6 +9,7 @@ import { CartScreen, HomeScreen, LoginScreen, ProductScreen } from './pages/Page
 import Navbar from './components/navbar/Navbar.js';
 import Backdrop from './components/backdrop/Backdrop.js';
 import SideDrawer from './components/sidedrawer/SideDrawer.js';
+import Footer from './components/footer/Footer.js';
 
 function App() {
 	const [ sideToggle, setSideToggle ] = useState(false);
@@ -27,7 +28,7 @@ function App() {
 				<Navbar click={() => setSideToggle(true)} />
 				<SideDrawer show={sideToggle} click={() => setSideToggle(false)} />
 				<Backdrop show={sideToggle} click={() => setSideToggle(false)} />
-				<main>
+				<main className="app__container">
 					<Routes>
 						<Route exact path="/" element={<Navigate to="/products" />} />
 						<Route exact path="/products" element={<HomeScreen />} />
@@ -37,6 +38,7 @@ function App() {
 					</Routes>
 				</main>
 			</Router>
+			<Footer />
 		</Fragment>
 	);
 }

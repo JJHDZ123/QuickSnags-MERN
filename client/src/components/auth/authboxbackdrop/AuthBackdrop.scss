@@ -1,0 +1,17 @@
+.AuthBoxBackdrop {
+    width: 160%;
+    height: 550px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50%;
+    transform: rotate(60deg);
+    top: -290px;
+    left: -70px;
+    background: rgb(232,67,147);
+    background: linear-gradient(
+    58deg,
+    rgba(232,67,147,1) 10%, 
+    rgba(123,44,191,1) 100%
+    );
+}

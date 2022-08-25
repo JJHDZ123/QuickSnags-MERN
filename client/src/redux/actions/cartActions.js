@@ -27,5 +27,5 @@ export const removeFromCart = (id) => (dispatch, getState) => {
 		payload : id
 	});
 
-	sessionStorage.setItem('cart', JSON.stringify(getState.cart.cartItems));
+	sessionStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
 };

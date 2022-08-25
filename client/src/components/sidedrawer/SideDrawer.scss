@@ -43,8 +43,12 @@
         }
     }
     :hover{
-        background: var(--black-color);
-        color: var(--white-color);
+        background: rgb(232,67,147);
+        background: linear-gradient(
+            58deg,
+        rgba(232,67,147,1) 10%, 
+        rgba(123,44,191,1) 100%
+    );
 
         .sidedrawer__cartbadge{
             background-color: var(--white-color);
