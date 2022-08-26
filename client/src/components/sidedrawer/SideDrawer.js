@@ -7,6 +7,7 @@ import './SideDrawer.scss';
 
 const SideDrawer = ({ show, click }) => {
 	const sideDrawerClass = [ 'sidedrawer' ];
+	const auth = useSelector((state) => state.auth);
 	const cart = useSelector((state) => state.cart);
 	const { cartItems } = cart;
 
@@ -22,17 +23,17 @@ const SideDrawer = ({ show, click }) => {
 		<div className={sideDrawerClass.join(' ')}>
 			<ul className="app__flex sidedrawer__links" onClick={click}>
 				<li>
-					<Link to="/cart">
-						<FontAwesomeIcon icon={faCartShopping} />
-						<span>Cart</span>
-						<span className="app__flex sidedrawer__cartbadge">{getCartCount()}</span>
-					</Link>
+					<Link to={auth ? '/profile' : '/auth'}>{auth ? 'profile' : 'login'}</Link>
 				</li>
 				<li>
 					<Link to="/products">Shop</Link>
 				</li>
 				<li>
-					<Link to="/auth">Login</Link>
+					<Link to="/cart">
+						<FontAwesomeIcon icon={faCartShopping} />
+						<span>Cart</span>
+						<span className="app__flex sidedrawer__cartbadge">{getCartCount()}</span>
+					</Link>
 				</li>
 			</ul>
 		</div>

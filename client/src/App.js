@@ -4,12 +4,13 @@ import { Toaster } from 'react-hot-toast';
 import './App.scss';
 
 //pages
-import { CartScreen, HomeScreen, LoginScreen, ProductScreen } from './pages/PagesIndex.js';
+import { CartScreen, HomeScreen, LoginScreen, ProductScreen, ProfileScreen } from './pages/PagesIndex.js';
 //components
 import Navbar from './components/navbar/Navbar.js';
 import Backdrop from './components/backdrop/Backdrop.js';
 import SideDrawer from './components/sidedrawer/SideDrawer.js';
 import Footer from './components/footer/Footer.js';
+import PrivateRoute from './components/PrivateRoutes.js';
 
 function App() {
 	const [ sideToggle, setSideToggle ] = useState(false);
@@ -17,7 +18,7 @@ function App() {
 	return (
 		<Fragment>
 			<Toaster
-				position="top-right"
+				position="top-center"
 				toastOptions={{
 					style : {
 						fontSize : '1.8rem'
@@ -35,6 +36,9 @@ function App() {
 						<Route exact path="/products/:id" element={<ProductScreen />} />
 						<Route exact path="/cart" element={<CartScreen />} />
 						<Route exact path="/auth" element={<LoginScreen />} />
+						<Route element={<PrivateRoute />}>
+							<Route path="/profile" element={<ProfileScreen />} />
+						</Route>
 					</Routes>
 				</main>
 			</Router>

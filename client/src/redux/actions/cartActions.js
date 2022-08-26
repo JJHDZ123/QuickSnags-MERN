@@ -17,7 +17,7 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
 		}
 	});
 
-	sessionStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+	localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
 	toast.success('Cart Updated!');
 };
 
@@ -27,5 +27,6 @@ export const removeFromCart = (id) => (dispatch, getState) => {
 		payload : id
 	});
 
-	sessionStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+	localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
+	toast.success('Cart Updated!');
 };

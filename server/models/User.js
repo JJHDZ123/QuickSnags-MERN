@@ -22,7 +22,7 @@ const userSchema = new Schema(
 			type    : Boolean,
 			default : false
 		},
-		cart     : {
+		orders   : {
 			type    : Array,
 			default : []
 		}

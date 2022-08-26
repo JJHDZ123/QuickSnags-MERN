@@ -6,6 +6,7 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import './Navbar.scss';
 
 const Navbar = ({ click }) => {
+	const auth = useSelector((state) => state.auth);
 	const cart = useSelector((state) => state.cart);
 	const { cartItems } = cart;
 
@@ -21,10 +22,8 @@ const Navbar = ({ click }) => {
 
 			<ul className="app__flex navbar__links">
 				<li>
-					<Link to="/cart" className="cart__link">
-						<FontAwesomeIcon icon={faCartShopping} />
-						<span>Cart</span>
-						<span className="app__flex cartlogo__badge">{getCartCount()}</span>
+					<Link to={auth ? '/profile' : '/auth'} className="login__link">
+						{auth ? 'Profile' : 'Login'}
 					</Link>
 				</li>
 				<li>
@@ -33,8 +32,10 @@ const Navbar = ({ click }) => {
 					</Link>
 				</li>
 				<li>
-					<Link to="/auth" className="login__link">
-						Login
+					<Link to="/cart" className="cart__link">
+						<FontAwesomeIcon icon={faCartShopping} />
+						<span>Cart</span>
+						<span className="app__flex cartlogo__badge">{getCartCount()}</span>
 					</Link>
 				</li>
 			</ul>

@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
 import createError from '../utils/createError.js';
 import User from '../models/User.js';
 
@@ -43,36 +44,39 @@ export const login = async (req, res, next) => {
 		if (!isPasswordCorrect) {
 			return next(createError({ status: 404, message: 'Password incorrect' }));
 		}
-
-		req.session.isAuth = true;
-		req.session.userID = user.id;
-		return res.json('logged in');
+		const payload = {
+			id   : user._id,
+			name : user.name
+		};
+		const token = jwt.sign(payload, process.env.JWT_SECRET, {
+			expiresIn : '1d'
+		});
+		return res
+			.cookie('access_token', token, {
+				httpOnly : true
+			})
+			.status(200)
+			.json({ message: 'login successful' });
 	} catch (err) {
 		console.log(err);
 		return next(err);
 	}
 };
-
-export const logout = (req, res, next) => {
-	req.session.destroy((err) => {
-		if (err) {
-			return next(err);
-		}
-		res.clearCookie('ECOMM');
-
-		return res.status(200).json({ message: 'Logout was successful' });
-	});
+export const logout = (req, res) => {
+	res.clearCookie('access_token');
+	return res.status(200).json({ message: 'Logout was successful' });
 };
 
 export const isLoggedIn = (req, res) => {
-	const token = req.session.isAuth;
-
-	switch (token) {
-		case !token:
-			return res.json(false);
-		case token === false:
-			return res.json(false);
-		case token === true:
-			return res.json(true);
+	const token = req.cookies.access_token;
+	if (!token) {
+		return res.json(false);
 	}
+	return jwt.verify(token, process.env.JWT_SECRET, (err) => {
+		if (err) {
+			return res.json(false);
+		} else {
+			return res.json(true);
+		}
+	});
 };

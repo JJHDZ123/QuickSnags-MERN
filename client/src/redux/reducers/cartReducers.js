@@ -1,9 +1,9 @@
 import * as actionTypes from '../constants/cartConstants.js';
 
-const cartFromSessionStorage = sessionStorage.getItem('cart') ? JSON.parse(sessionStorage.getItem('cart')) : [];
+const cartFromLocalStorage = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
 export const cartReducer = (
-	state = cartFromSessionStorage ? { cartItems: cartFromSessionStorage } : { cartItems: [] },
+	state = cartFromLocalStorage ? { cartItems: cartFromLocalStorage } : { cartItems: [] },
 	action
 ) => {
 	switch (action.type) {

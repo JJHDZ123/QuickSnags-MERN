@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 import { composeWithDevToolsDevelopmentOnly } from '@redux-devtools/extension';
 
 import { cartReducer } from './reducers/cartReducers.js';
+import { authReducer, userReducer } from './reducers/authReducers.js';
 import { getProductsReducer, getProductDetailsReducer } from './reducers/productReducers.js';
 
 const allReducers = combineReducers({
 	cart              : cartReducer,
+	auth              : authReducer,
 	getProducts       : getProductsReducer,
 	getProductDetails : getProductDetailsReducer
 });
