@@ -6,7 +6,7 @@ export const verifyAuth = () => async (dispatch) => {
 	try {
 		dispatch({ type: actionTypes.GET_AUTH_REQUEST });
 
-		const { data } = await axios.get('/auth/refresh');
+		const { data } = await axios.get('/api/auth/refresh');
 
 		dispatch({
 			type    : actionTypes.GET_AUTH_SUCCESS,
