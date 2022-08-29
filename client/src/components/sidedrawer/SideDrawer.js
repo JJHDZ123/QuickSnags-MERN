@@ -23,7 +23,9 @@ const SideDrawer = ({ show, click }) => {
 		<div className={sideDrawerClass.join(' ')}>
 			<ul className="app__flex sidedrawer__links" onClick={click}>
 				<li>
-					<Link to={auth ? '/profile' : '/auth'}>{auth ? 'profile' : 'login'}</Link>
+					<Link to={auth.Auth ? '/profile' : '/auth'}>
+						{auth.Auth ? `${auth.Auth.username} Profile` : 'login'}
+					</Link>
 				</li>
 				<li>
 					<Link to="/products">Shop</Link>

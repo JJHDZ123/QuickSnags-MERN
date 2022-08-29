@@ -10,7 +10,7 @@ import Navbar from './components/navbar/Navbar.js';
 import Backdrop from './components/backdrop/Backdrop.js';
 import SideDrawer from './components/sidedrawer/SideDrawer.js';
 import Footer from './components/footer/Footer.js';
-import PrivateRoute from './components/PrivateRoutes.js';
+import PersistLogin from './components/auth/PersistLogin';
 
 function App() {
 	const [ sideToggle, setSideToggle ] = useState(false);
@@ -32,11 +32,11 @@ function App() {
 				<main className="app__container">
 					<Routes>
 						<Route exact path="/" element={<Navigate to="/products" />} />
-						<Route exact path="/products" element={<HomeScreen />} />
-						<Route exact path="/products/:id" element={<ProductScreen />} />
-						<Route exact path="/cart" element={<CartScreen />} />
-						<Route exact path="/auth" element={<LoginScreen />} />
-						<Route element={<PrivateRoute />}>
+						<Route element={<PersistLogin />}>
+							<Route exact path="/products" element={<HomeScreen />} />
+							<Route exact path="/products/:id" element={<ProductScreen />} />
+							<Route exact path="/cart" element={<CartScreen />} />
+							<Route exact path="/auth" element={<LoginScreen />} />
 							<Route path="/profile" element={<ProfileScreen />} />
 						</Route>
 					</Routes>

@@ -2,7 +2,7 @@ import User from '../models/User.js';
 
 export const getUserInfo = async (req, res, next) => {
 	try {
-		const data = await User.findById(req.id).exec();
+		const data = await User.findById(req.id).select(' username email orders ');
 		return res.status(200).json(data);
 	} catch (err) {
 		return next(err);
@@ -20,7 +20,7 @@ export const updateUser = async (req, res, next) => {
 			{
 				new : true
 			}
-		).select('username email');
+		).exec();
 		return res.status(200).json(updatedUser);
 	} catch (err) {
 		return next(err);

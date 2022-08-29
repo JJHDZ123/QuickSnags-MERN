@@ -5,7 +5,7 @@ import 'dotenv/config';
 export default (req, res, next) => {
 	const authHeader = req.headers.authorization || req.headers.Authorization;
 
-	if (!authHeader.startsWith('Bearer ')) {
+	if (!authHeader.startsWith('Bearer')) {
 		return next(createError({ status: 401, message: 'Unauthorized' }));
 	}
 
@@ -15,8 +15,8 @@ export default (req, res, next) => {
 		if (err) {
 			return next(createError({ status: 403, message: 'Forbidden' }));
 		}
-		req.id = decoded.UserInfo.id;
-		req.username = decoded.UserInfo.username;
+		req.id = decoded.payload.id;
+		req.username = decoded.payload.username;
 		next();
 	});
 };

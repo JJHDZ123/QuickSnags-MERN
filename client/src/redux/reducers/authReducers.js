@@ -1,6 +1,6 @@
 import * as actionTypes from '../constants/userConstants.js';
 
-export const authReducer = (state = { username: '', token: '' }, action) => {
+export const authReducer = (state = {}, action) => {
 	switch (action.type) {
 		case actionTypes.GET_AUTH_REQUEST:
 			return {
@@ -22,4 +22,24 @@ export const authReducer = (state = { username: '', token: '' }, action) => {
 	}
 };
 
-export const userReducer = (state = {}) => {};
+export const userReducer = (state = {}, action) => {
+	switch (action.type) {
+		case actionTypes.GET_USER_INFO_REQUEST:
+			return {
+				loading  : true,
+				currUser : ''
+			};
+		case actionTypes.GET_USER_INFO_SUCCESS:
+			return {
+				loading  : false,
+				currUser : action.payload
+			};
+		case actionTypes.GET_USER_INFO_FAILURE:
+			return {
+				loading : false,
+				error   : action.payload
+			};
+		default:
+			return state;
+	}
+};

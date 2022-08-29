@@ -30,3 +30,11 @@ export const removeFromCart = (id) => (dispatch, getState) => {
 	localStorage.setItem('cart', JSON.stringify(getState().cart.cartItems));
 	toast.success('Cart Updated!');
 };
+
+export const cartReset = () => (dispatch, getState) => {
+	dispatch({
+		type : actionTypes.CART_RESET
+	});
+	localStorage.clear('cart');
+	toast.success('Snacks on the way!');
+};

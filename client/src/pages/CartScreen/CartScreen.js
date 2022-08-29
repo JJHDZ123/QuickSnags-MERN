@@ -5,7 +5,7 @@ import './CartScreen.scss';
 
 import CartItem from '../../components/cartitem/CartItem.js';
 
-import { addToCart, removeFromCart } from '../../redux/actions/cartActions.js';
+import { addToCart, removeFromCart, cartReset } from '../../redux/actions/cartActions.js';
 
 const CartScreen = () => {
 	const dispatch = useDispatch();
@@ -19,6 +19,10 @@ const CartScreen = () => {
 
 	const removeHandler = (id) => {
 		dispatch(removeFromCart(id));
+	};
+
+	const orderSubmited = () => {
+		dispatch(cartReset());
 	};
 
 	const getCartCount = () => {
@@ -54,7 +58,7 @@ const CartScreen = () => {
 					<p>${getCartSubtotal().toFixed(2)}</p>
 				</div>
 				<div>
-					<button>Proceed To Checkout</button>
+					<button onClick={orderSubmited}>Proceed To Checkout</button>
 				</div>
 			</div>
 		</div>

@@ -9,6 +9,7 @@ import { getProductsReducer, getProductDetailsReducer } from './reducers/product
 const allReducers = combineReducers({
 	cart              : cartReducer,
 	auth              : authReducer,
+	user              : userReducer,
 	getProducts       : getProductsReducer,
 	getProductDetails : getProductDetailsReducer
 });

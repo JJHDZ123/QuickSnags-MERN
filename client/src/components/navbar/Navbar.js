@@ -22,8 +22,8 @@ const Navbar = ({ click }) => {
 
 			<ul className="app__flex navbar__links">
 				<li>
-					<Link to={auth ? '/profile' : '/auth'} className="login__link">
-						{auth ? 'Profile' : 'Login'}
+					<Link to={auth.Auth ? '/profile' : '/auth'} className="login__link">
+						{auth.Auth ? auth.Auth.username : 'Login'}
 					</Link>
 				</li>
 				<li>
