@@ -17,7 +17,9 @@ const Navbar = ({ click }) => {
 	return (
 		<nav className="app__flex navbar">
 			<div className="navbar__logo">
-				<h2 className="bold-text">QUICKSNAGS</h2>
+				<Link to="/" className="navbar__logoBtn">
+					<h2 className="bold-text">QUICKSNAGS</h2>
+				</Link>
 			</div>
 
 			<ul className="app__flex navbar__links">

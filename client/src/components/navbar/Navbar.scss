@@ -12,6 +12,12 @@
     );
 }
 
+.navbar__logoBtn {
+    padding: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .navbar__logo h2 {
     color: var(--white-color);
 }

@@ -28,10 +28,10 @@ const Register = (props) => {
 				<input name="username" type="username" placeholder="Username" required />
 				<input name="email" type="email" placeholder="Email" required />
 				<input name="password" type="password" placeholder="Password" required />
+				<button className="submitbtn" type="submit">
+					Sign up
+				</button>
 			</form>
-			<button className="submitbtn" type="submit">
-				Sign up
-			</button>
 			<p>
 				Already a member?{' '}
 				<button className="boldlink" onClick={() => props.switch('signin')}>
