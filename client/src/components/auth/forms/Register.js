@@ -13,7 +13,7 @@ const Register = (props) => {
 		};
 		console.log(user);
 		try {
-			await axios.post('/auth/register', user);
+			await axios.post('/api/auth/register', user);
 			e.target.reset();
 			toast.success('Registration completed!');
 		} catch (err) {

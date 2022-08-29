@@ -15,7 +15,7 @@ const Login = (props) => {
 		const password = e.target.password.value;
 
 		try {
-			await axios.post('/auth/login', {
+			await axios.post('/api/auth/login', {
 				email,
 				password
 			});

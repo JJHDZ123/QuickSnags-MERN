@@ -26,7 +26,7 @@ export const getUser = () => async (dispatch, getState) => {
 
 		const header = 'Bearer ' + getState().auth.Auth.accessToken;
 
-		const { data } = await axios.get('/users/me', {
+		const { data } = await axios.get('/api/users/me', {
 			headers : {
 				Authorization : header
 			}
@@ -54,7 +54,7 @@ export const updateUser = (updatedUser) => async (dispatch, getState) => {
 
 		const header = 'Bearer ' + getState().auth.Auth.accessToken;
 
-		const { data } = await axios.put('/users/me', updatedUser, {
+		const { data } = await axios.put('/api/users/me', updatedUser, {
 			headers : {
 				Authorization : header
 			}
@@ -72,7 +72,7 @@ export const updateUser = (updatedUser) => async (dispatch, getState) => {
 };
 
 export const logout = () => () => {
-	axios.get('/auth/logout', {
+	axios.get('/api/auth/logout', {
 		withCredentials : true
 	});
 	toast.success('you have been logged out!');
