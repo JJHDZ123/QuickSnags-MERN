@@ -6,7 +6,7 @@ import { default as connectMongoDBSession } from 'connect-mongodb-session';
 import connectDB from './config/Database.js';
 import allRoutes from './routes/index.js';
 import { fileURLToPath } from 'url';
-import { path, dirname } from 'path';
+import path, { dirname } from 'path';
 import 'dotenv/config';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
