@@ -46,8 +46,8 @@ const products = [
 			'https://cdn.shopify.com/s/files/1/0549/3352/0627/products/6000204712890_1_grande.jpg?v=1646312747',
 		description  :
 			"New from Canada, Reese's Pieces with a fresh new spin! A tasty pretzel right at the center! same awesome snack of peanutbutter in a coated candy shell.",
-		price        : 140,
-		countInStock : 10
+		price        : 7,
+		countInStock : 30
 	}
 ];
 

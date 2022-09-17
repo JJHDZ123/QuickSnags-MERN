@@ -47,6 +47,7 @@
 .image__container {
     display: flex;
     justify-content: center;
+    object-fit: cover;
 }
 
 .product__image {
