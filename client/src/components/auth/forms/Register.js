@@ -11,7 +11,6 @@ const Register = (props) => {
 			email    : e.target.email.value,
 			password : e.target.password.value
 		};
-		console.log(user);
 		try {
 			await axios.post('/api/auth/register', user);
 			e.target.reset();

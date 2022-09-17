@@ -2,7 +2,6 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import cookieParser from 'cookie-parser';
-import { default as connectMongoDBSession } from 'connect-mongodb-session';
 import connectDB from './config/Database.js';
 import allRoutes from './routes/index.js';
 import { fileURLToPath } from 'url';
@@ -20,11 +19,14 @@ app.use(cookieParser());
 
 app.use('/api', allRoutes);
 
+//USED FOR THE DEPLOYMENT INTO HEROKU FOR CLIENT SIDE
+//* ****************************************************************** */
 app.use(express.static(path.resolve(__dirname, './client/build')));
 
 app.get('/', (req, res) => {
 	res.sendFile(path.resolve(__dirname, './client/build', 'index.html'));
 });
+//* ******************************************************************** */
 
 app.use((err, req, res, next) => {
 	const status = err.statusCode || 500;

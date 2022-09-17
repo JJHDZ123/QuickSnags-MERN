@@ -1,55 +1,51 @@
 const products = [
 	{
-		name         : 'PlayStation 5',
-		imageUrl     :
-			'https://images.unsplash.com/photo-1606813907291-d86efa9b94db?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80',
+		name         : 'Marinela Barritas Fresa',
+		imageUrl     : 'https://images.heb.com/is/image/HEBGrocery/000402268',
 		description  :
-			'PlayStation 5 (PS5) is a home video game console developed by Sony Interactive Entertainment. Announced in 2019 as the successor to the PlayStation 4, the PS5 was released on November 12, 2020 in Australia, Japan, New Zealand, North America, Singapore, and South Korea, and November 19, 2020 onwards in other major markets except China and India.',
-		price        : 499,
-		countInStock : 15
+			'Mexican Strawberry filled cookie producred by Marinela, the perfect combination fo sweet fruit filling and soft crumbly cookie.',
+		price        : 4,
+		countInStock : 40
 	},
 	{
-		name         : 'Iphone 12',
+		name         : 'Jack n Jill Choco Knots',
 		imageUrl     :
-			'https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1463&q=80',
-		description  :
-			'Welcome to a new era of iPhone. Beautifully bright 6.1-inch Super Retina XDR display.1 Ceramic Shield with 4x better drop performance.2 Incredible low-light photography with Night mode on all cameras. Cinema-grade Dolby Vision video recording, editing, and playback. Powerful A14 Bionic chip. And new MagSafe accessories for easy attach and faster wireless charging.3 Let the fun begin.',
-		price        : 1099,
-		countInStock : 10
+			'https://cdn.shopify.com/s/files/1/2713/3026/products/jack-n-jill-chips-jack-n-jill-choco-knots-599074013228.jpg?v=1648781875',
+		description  : 'Chocolate covered pretzel a filipino classic, a perfect snack day or night!',
+		price        : 1,
+		countInStock : 50
 	},
 	{
-		name         : 'Cannon EOS-1D',
+		name         : 'Doritos - Loaded Pepperoni Pizza (180g)',
 		imageUrl     :
-			'https://images.unsplash.com/photo-1519183071298-a2962feb14f4?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+			'http://uksnackattack.co.uk/wp-content/uploads/2022/07/291091567_1063783154520914_3667948604891384584_n.jpg',
 		description  :
-			'The EOS-1D X combines speed with image quality, to create the next generation camera for professionals. Full frame 18 megapixel sensor with Dual “DIGIC 5+” processors sets the standard, and up to 12 frames per second shooting takes it beyond.',
-		price        : 1300,
-		countInStock : 5
-	},
-	{
-		name         : 'Amazon Alexa',
-		imageUrl     :
-			'https://images.unsplash.com/photo-1518444065439-e933c06ce9cd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80',
-		description  :
-			'It is capable of voice interaction, music playback, making to-do lists, setting alarms, streaming podcasts, playing audiobooks, and providing weather, traffic, sports, and other real-time information, such as news. Alexa can also control several smart devices using itself as a home automation system.',
-		price        : 50,
+			'Limited Edition Loaded Pepperoni Pizza Doritos come from the UK, but here only for a short time!',
+		price        : 10,
 		countInStock : 25
 	},
 	{
-		name         : 'Audio Technica Headphones',
-		imageUrl     :
-			'https://images.unsplash.com/photo-1558756520-22cfe5d382ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
-		description  :
-			'Outfitted with 45mm large-aperture dynamic drivers and an over-ear, closed-back design, the ATH-M50x headphones deliver clarity, deep bass, and extended bandwidth (15 Hz to 28 kHz) while isolating you from outside sounds.',
-		price        : 233,
-		countInStock : 4
+		name         : 'Doritos - Hot Spicy (68g)',
+		imageUrl     : 'https://sc01.alicdn.com/kf/Hfaa6304ace384f36afe8ac84d8866dd5V.jpg',
+		description  : 'Hot and Spicy doritos form China that pack a sweet heat!',
+		price        : 6,
+		countInStock : 25
 	},
 	{
-		name         : 'JBL FLIP 4',
+		name         : 'Sour Patch Kids - Crush Soda Mix',
 		imageUrl     :
-			'https://images.unsplash.com/photo-1564424224827-cd24b8915874?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80',
+			'https://i5.walmartimages.com/asr/0cc7c095-61a8-470d-86ab-2f7d2afbded3_1.0531510e859a820d6c7e07dfc48132a4.jpeg',
 		description  :
-			'JBL Flip 4 is the next generation in the award-winning Flip series; it is a portable Bluetooth speaker that delivers surprisingly powerful stereo sound. This compact speaker is powered by a 3000mAh rechargeable Li-ion battery that offers up to 12 hours of continuous, high-quality audio playtime.',
+			'Sour patch kids with a refreshing crush soda flavor! enjoy the new twist on your favorite soft drink with orange, strawberry, pineapple, and grape crush soda-flavored Sour Patch Kids candy!',
+		price        : 6,
+		countInStock : 40
+	},
+	{
+		name         : "Reese's Pieces with Pretzels - 170g",
+		imageUrl     :
+			'https://cdn.shopify.com/s/files/1/0549/3352/0627/products/6000204712890_1_grande.jpg?v=1646312747',
+		description  :
+			"New from Canada, Reese's Pieces with a fresh new spin! A tasty pretzel right at the center! same awesome snack of peanutbutter in a coated candy shell.",
 		price        : 140,
 		countInStock : 10
 	}

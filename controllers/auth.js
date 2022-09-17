@@ -37,7 +37,7 @@ export const login = async (req, res, next) => {
 	}
 
 	try {
-		const user = await User.findOne({ email: req.body.email }).exec();
+		const user = await User.findOne({ username: req.body.username }).exec();
 		if (!user) {
 			return next(createError({ status: 404, message: 'No user found' }));
 		}
@@ -50,6 +50,9 @@ export const login = async (req, res, next) => {
 			id       : user._id,
 			username : user.username
 		};
+
+		const username = user.username;
+		const id = user._id;
 
 		const accessToken = jwt.sign(payload, process.env.JWT_SECRET, {
 			expiresIn : '1m'
@@ -64,7 +67,7 @@ export const login = async (req, res, next) => {
 				httpOnly : true,
 				maxAge   : 7 * 24 * 60 * 60 * 1000
 			})
-			.json({ accessToken });
+			.json({ accessToken, username, id });
 	} catch (err) {
 		console.log(err);
 		return next(err);
